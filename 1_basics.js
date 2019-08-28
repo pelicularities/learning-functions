@@ -39,3 +39,12 @@ function increment(add = 0) {
 assert(increment() === 0, "no increment was done");
 assert(increment(7) === 7, "increase by 7");
 assert(increment(4) === 11, "increase by 4");
+
+// IIFE, Immediate Invoke Function Expression
+(function() {
+  console.log("this runs immediately");
+})();
+
+(function() {
+  console.log("this runs immediately too!!");
+})();

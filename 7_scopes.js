@@ -2,30 +2,34 @@ const assert = require("assert");
 
 // ========= Scope from parent =============
 
-var fruit = "apple";
+var apple = "apple";
 let banana = "banana";
 const citrus = "citrus";
 
-assert(fruit === "apple", "is apple");
+assert(apple === "apple", "is apple");
 assert(banana === "banana", "is true");
 assert(citrus === "citrus", "is true");
 
+// Have access to all variables in function scope
 function getFruit() {
-  var fruit = "pinapple";
-  assert(fruit === "apple", "is apple");
+  console.log("in getFruit");
+  assert(apple === "apple", "is not apple");
   assert(banana === "banana", "true");
   assert(citrus === "citrus", "is true");
 }
 
+getFruit();
+
+// Have access to all variables in  block scope
 {
-  assert(fruit === "apple", "is apple");
+  assert(apple === "apple", "is apple");
   assert(banana === "banana", "true");
   assert(citrus === "citrus", "is true");
 }
 
 // ========= Block Scope =============
 // let and const are block scope
-{
+if (true) {
   var bmw = "bmw";
   let toyota = "toyota";
   const mazda = "mazda";
@@ -43,9 +47,9 @@ assert.throws(() => mazda === "mazda", { name: "ReferenceError" });
 // var is scope within the function,
 
 (function() {
-  var pizza = "pizza";
-  let rice = "rice";
-  const noodles = "noodles";
+  var pizza = "pizza"; // scope to function, not usable outside the function
+  let rice = "rice"; // scope to both function and block, not usbale outside both function and block
+  const noodles = "noodles"; // scope to both function and block, not usbale outside both function and block
 
   assert(pizza === "pizza", "true");
   assert(rice === "rice", "true");

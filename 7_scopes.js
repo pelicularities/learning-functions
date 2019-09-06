@@ -17,8 +17,14 @@ function getFruit() {
   assert(banana === "banana", "true");
   assert(citrus === "citrus", "is true");
 }
-
 getFruit();
+
+// Have access to all variables in block scope when declared outside the block scope
+if (true) {
+  assert(apple === "apple", "is not apple");
+  assert(banana === "banana", "true");
+  assert(citrus === "citrus", "is true");
+}
 
 // Have access to all variables in  block scope
 {
@@ -59,3 +65,38 @@ assert.throws(() => mazda === "mazda", { name: "ReferenceError" });
 assert.throws(() => pizza === "pizza", { name: "ReferenceError" });
 assert.throws(() => rice === "rice", { name: "ReferenceError" });
 assert.throws(() => noodles === "noodles", { name: "ReferenceError" });
+
+// more examples on closure, functions having access to variables declared on outer functions
+function printPrice(currencySymbol, value) {
+  function formatPrice() {
+    return `${currencySymbol}${value}`;
+  }
+
+  console.log(formatPrice());
+}
+printPrice("$", 1000);
+
+function getFastFoodMenu(fastfood) {
+  const mapping = {
+    mac: [
+      {
+        name: "fries",
+        price: 2,
+      },
+      {
+        name: "burger",
+        price: 3,
+      },
+    ],
+  };
+
+  const showPrettyMenu = () => {
+    const menu = mapping[fastfood];
+    let menuItems = "";
+    menu.forEach(item => (menuItems += `${item.name} cost $${item.price}\n`));
+    return menuItems;
+  };
+
+  console.log(showPrettyMenu());
+}
+getFastFoodMenu("mac");

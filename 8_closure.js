@@ -6,12 +6,12 @@ const assert = require("assert");
  * A closure is the combination of a function and the lexical environment
  * within which that function was declared (e.g. another function, or a .js file).
  */
-const apple = "apple";
-const isApple = () => assert(apple === "apple", "true");
+const fruit = "apple";
+const isApple = () => {
+  assert(fruit === "apple", "true");
+};
 
-setTimeout(() => {
-  isApple();
-}, 1000);
+isApple();
 
 // common use case of closure is to create private variables
 function createSayHi(name) {
@@ -20,9 +20,16 @@ function createSayHi(name) {
   };
 }
 
-const johnSayHi = createSayHi("John");
+let name = "John";
+const johnSayHi = createSayHi(name);
 johnSayHi(); // the variable name is now private within the function and close for modifications.
 
-const sallySayHi = createSayHi("Sally");
+name = "Sally";
+const sallySayHi = createSayHi(name);
+
 sallySayHi();
+johnSayHi();
+johnSayHi();
+johnSayHi();
+johnSayHi();
 johnSayHi();

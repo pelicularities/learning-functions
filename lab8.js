@@ -11,3 +11,15 @@ const assert = require("assert");
  * var addThree = add(3);
  * addThree(3); // 6
  */
+
+function add(numberToAdd) {
+  return function(inputNumber) {
+    return inputNumber + numberToAdd;
+  };
+}
+
+const addOneTo = add(1);
+const addThreeTo = add(3);
+
+assert(addOneTo(3) === 4, "1 + 3 = 4");
+assert(addThreeTo(3) === 6, "3 + 3 = 6");

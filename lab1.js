@@ -2,7 +2,7 @@ const assert = require("assert");
 
 // 1. write a function that returns the area of a triangle
 function getAreaOfTriangle(base, height) {
-  // fill in the function code
+  return 0.5 * base * height;
 }
 
 assert(
@@ -12,8 +12,9 @@ assert(
 
 // 2. write a function that returns the area of a square
 // with the `length` parameter with a default value 5
-
-// function getAreaOfSquare...
+function getAreaOfSquare(length = 5) {
+  return Math.pow(length, 2);
+}
 
 assert(
   getAreaOfSquare(10) === 100,
@@ -25,9 +26,16 @@ assert(
   "area of square with length of 5 (default value) should be 25"
 );
 
-// 2. using rest parameters, return the smallest number
-function getSmallest(...rest) {
-  // fill in the function code
+// 3. define a function that accepts many numbers as parameters
+// and returns the smallest number using rest parameter
+function getSmallest(...numbers) {
+  let minvalue = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < minvalue) {
+      minvalue = numbers[i];
+    }
+  }
+  return minvalue;
 }
 
 assert(
@@ -39,5 +47,8 @@ assert(
   getSmallest(100, 100, 8, 8) === 8,
   "should return the smallest number even with duplicates"
 );
+// 4. Create a IIFE and that console.log a hello text immediately
 
-// 3. Create a IIFE and that console.log a hello text immediately
+(function() {
+  console.log("hello");
+})();

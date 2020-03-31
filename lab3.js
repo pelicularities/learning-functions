@@ -1,6 +1,6 @@
 const assert = require("assert");
 // using arrow functions create 4 methods
-// add, subtact, multiply, divide
+// add, subtract, multiply, divide
 
 const add = (a, b) => {
   return a + b;

@@ -25,7 +25,7 @@ assert(
   "area of square with length of 5 (default value) should be 25"
 );
 
-// 2. using rest parameters, return the smallest number
+// 3. using rest parameters, return the smallest number
 function getSmallest(...rest) {
   // fill in the function code
 }
@@ -40,4 +40,5 @@ assert(
   "should return the smallest number even with duplicates"
 );
 
-// 3. Create a IIFE and that console.log a hello text immediately
+// 4. Create a IIFE and that console.log a hello text immediately
+

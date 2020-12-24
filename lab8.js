@@ -5,17 +5,15 @@ const assert = require("assert");
 // Add(n) which returns a function that always adds n to any number
 
 /**
- * var addOne = add(1);
+ * const addOne = add(1);
  * addOne(3); // 4
  *
- * var addThree = add(3);
+ * const addThree = add(3);
  * addThree(3); // 6
  */
 
 function add(numberToAdd) {
-  return function(inputNumber) {
-    return inputNumber + numberToAdd;
-  };
+  // TODO: your code here
 }
 
 const addOneTo = add(1);

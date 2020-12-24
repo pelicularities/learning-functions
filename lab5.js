@@ -22,7 +22,7 @@ assert(
 );
 
 const iceCreamMachine = {
-  make: function(topping) {
+  make: function (topping) {
     let flavour = this.flavour;
     if (topping) {
       flavour += " " + topping;
@@ -35,14 +35,24 @@ function IceCream(flavour) {
   this.flavour = flavour;
 }
 
-const chocolateIceCream = new IceCream("chocolate"); // Todo: create a chocolate Ice cream
-const makeChocolateIceCream = iceCreamMachine.make.bind(chocolateIceCream); // create a make method with chocolate ice cream
+// TODO:
+// 1. Create a chocolate flavoured IceCream
+// const chocolateIceCream = ...
+
+// 2. Call `make` method on iceCreamMachine with chocolateIceCream context, using `bind`
+// const makeChocolateIceCream = ...
 
 assert(makeChocolateIceCream() === "chocolate", "should return chocolate");
 
-const vanilaIceCream = new IceCream("vanilla");
+// TODO:
+// 1. Create a vanilla flavoured IceCream
+// const vanillaIceCream = ...
+const vanillaIceCream = new IceCream("vanilla");
+
+// 2. Call `make` method on iceCreamMachine with vanillaIceCream context AND "nuts" topping, using `call` or `apply`
+// const makeVanillaIceCream = ...
+
 assert(
-  iceCreamMachine.make.call(vanilaIceCream, "sprinkle-nuts") ===
-    "vanilla sprinkle-nuts",
-  "should return vanila with sprinkle-nuts"
+  makeVanillaIceCream === "vanilla nuts",
+  "should return vanilla with nuts"
 );

@@ -1,6 +1,6 @@
 const assert = require("assert");
 
-// Instructions:use function to create 2 new objects;
+// 1. use function to create 2 new objects;
 
 function createPerson(name, age) {}
 

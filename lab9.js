@@ -15,7 +15,9 @@ const assert = require("assert");
  * fib 5 => fib 3 + fib 4 => 2 + 3 => 5
  * fib 6 => fib 4 + fib 5 => 3 + 5 => 8
  */
-function fib() {}
+function fib() {
+  // TODO: your code here
+}
 
 assert(fib(0) === 0, "fib0");
 assert(fib(1) === 1, "fib1");

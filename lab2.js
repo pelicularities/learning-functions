@@ -1,7 +1,7 @@
-// implement another method getTime and print out current time;
+// 1. implement another method getTime and print out current time;
 
 const calendar = {
-  getDate: function() {
+  getDate: function () {
     return new Date().toDateString();
   },
 };

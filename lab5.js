@@ -35,21 +35,19 @@ function IceCream(flavour) {
   this.flavour = flavour;
 }
 
-// TODO:
-// 1. Create a chocolate flavoured IceCream
+// 1.1 Create a chocolate flavoured IceCream
 // const chocolateIceCream = ...
 
-// 2. Call `make` method on iceCreamMachine with chocolateIceCream context, using `bind`
+// 1.2 Call `make` method on iceCreamMachine with chocolateIceCream context, using `bind`
 // const makeChocolateIceCream = ...
 
 assert(makeChocolateIceCream() === "chocolate", "should return chocolate");
 
-// TODO:
-// 1. Create a vanilla flavoured IceCream
+// 2.1 Create a vanilla flavoured IceCream
 // const vanillaIceCream = ...
 const vanillaIceCream = new IceCream("vanilla");
 
-// 2. Call `make` method on iceCreamMachine with vanillaIceCream context AND "nuts" topping, using `call` or `apply`
+// 2.2 Call `make` method on iceCreamMachine with vanillaIceCream context AND "nuts" topping, using `call` or `apply`
 // const makeVanillaIceCream = ...
 
 assert(

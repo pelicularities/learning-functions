@@ -1,8 +1,8 @@
 const assert = require("assert");
 
 // questions from: https://www.codewars.com/kata/functional-addition
-// Create a function add(n)
-// Add(n) which returns a function that always adds n to any number
+// 1. Create a function add(n)
+// which returns a function that always adds n to any number
 
 /**
  * const addOne = add(1);
@@ -12,7 +12,7 @@ const assert = require("assert");
  * addThree(3); // 6
  */
 
-function add(numberToAdd) {
+function add() {
   // TODO: your code here
 }
 

@@ -27,7 +27,7 @@ assert(
 
 // 3. using rest parameters, return the smallest number
 function getSmallest(...rest) {
-  // fill in the function code
+  // TODO: your code here
 }
 
 assert(
@@ -41,4 +41,3 @@ assert(
 );
 
 // 4. Create a IIFE and that console.log a hello text immediately
-

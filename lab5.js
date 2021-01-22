@@ -36,10 +36,10 @@ function IceCream(flavour) {
 }
 
 // 1.1 Create a chocolate flavoured IceCream
-// const chocolateIceCream = ...
+const chocolateIceCream = new IceCream('chocolate');
 
 // 1.2 Call `make` method on iceCreamMachine with chocolateIceCream context, using `bind`
-// const makeChocolateIceCream = ...
+const makeChocolateIceCream = iceCreamMachine.make.bind(chocolateIceCream);
 
 assert(makeChocolateIceCream() === "chocolate", "should return chocolate");
 
@@ -48,7 +48,7 @@ assert(makeChocolateIceCream() === "chocolate", "should return chocolate");
 const vanillaIceCream = new IceCream("vanilla");
 
 // 2.2 Call `make` method on iceCreamMachine with vanillaIceCream context AND "nuts" topping, using `call` or `apply`
-// const makeVanillaIceCream = ...
+const makeVanillaIceCream = iceCreamMachine.make.call(vanillaIceCream, 'nuts');
 
 assert(
   makeVanillaIceCream === "vanilla nuts",

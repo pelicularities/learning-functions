@@ -12,8 +12,10 @@ const assert = require("assert");
  * addThree(3); // 6
  */
 
-function add() {
-  // TODO: your code here
+function add(number1) {
+  return function(number2) {
+    return number1 + number2;
+  };
 }
 
 const addOneTo = add(1);

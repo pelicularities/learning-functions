@@ -4,7 +4,7 @@ const assert = require("assert");
 
 function createPerson(name, age) {}
 
-// const person1
-// const person2
+const person1 = new createPerson('Ash Ketchum', 10);
+const person2 = new createPerson('Gary Oak', 10);
 
 assert(person1 !== person2, "should not be the same person");

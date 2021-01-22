@@ -30,17 +30,19 @@ assert(module.exports.hello === "hello", "hello from windows");
 this.hello = "hello from out of wrapper";
 
 function normalFn() {
+  console.log(this.hello);
   return this.hello;
 }
 
 const arrowFn = () => {
+  console.log(this.hello);
   return this.hello;
 };
 
 function wrapper() {
   this.hello = "hello from wrapper";
   assert(normalFn() === "hello from wrapper", "from wrapper");
-  arrowFn(arrowFn() === "hello from out of wrapper", "from out of wrapper");
+  assert(arrowFn() === "hello from out of wrapper", "from out of wrapper");
 }
 
 wrapper();
